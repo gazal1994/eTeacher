@@ -82,7 +82,7 @@ export const EnrolmentDrawer: React.FC<EnrolmentDrawerProps> = ({
 
   if (!course) return null;
 
-  const handleAddStudent = async (studentId: number) => {
+  const handleAddStudent = async (studentId: string) => {
     setLoadingStudentId(studentId);
     setError('');
     setSuccessMessage('');
@@ -103,7 +103,7 @@ export const EnrolmentDrawer: React.FC<EnrolmentDrawerProps> = ({
     }
   };
 
-  const handleRemoveStudent = async (studentId: number) => {
+  const handleRemoveStudent = async (studentId: string) => {
     setLoadingStudentId(studentId);
     setError('');
     setSuccessMessage('');
@@ -119,7 +119,7 @@ export const EnrolmentDrawer: React.FC<EnrolmentDrawerProps> = ({
     }
   };
 
-  const handleToggleStudent = (studentId: number) => {
+  const handleToggleStudent = (studentId: string) => {
     setSelectedStudentIds(prev => 
       prev.includes(studentId)
         ? prev.filter(id => id !== studentId)

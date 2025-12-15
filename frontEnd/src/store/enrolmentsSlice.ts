@@ -45,7 +45,7 @@ export const createEnrolment = createAsyncThunk(
 
 export const deleteEnrolment = createAsyncThunk(
   'enrolments/deleteEnrolment',
-  async ({ studentId, courseId }: { studentId: number; courseId: number }) => {
+  async ({ studentId, courseId }: { studentId: string; courseId: string }) => {
     await enrolmentsApi.deleteEnrolment(studentId, courseId);
     return { studentId, courseId };
   }

@@ -48,7 +48,7 @@ export const EnrolmentFormModal: React.FC<EnrolmentFormModalProps> = ({
       return;
     }
 
-    onSubmit(Number(studentId), Number(courseId));
+    onSubmit(studentId as string, courseId as string);
   };
 
   const handleClose = () => {
@@ -83,7 +83,7 @@ export const EnrolmentFormModal: React.FC<EnrolmentFormModalProps> = ({
           <select
             id="student"
             value={studentId}
-            onChange={(e) => setStudentId(e.target.value ? Number(e.target.value) : '')}
+            onChange={(e) => setStudentId(e.target.value)}
             className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={isLoading}
             required
@@ -105,7 +105,7 @@ export const EnrolmentFormModal: React.FC<EnrolmentFormModalProps> = ({
           <select
             id="course"
             value={courseId}
-            onChange={(e) => setCourseId(e.target.value ? Number(e.target.value) : '')}
+            onChange={(e) => setCourseId(e.target.value)}
             className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={isLoading}
             required

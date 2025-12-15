@@ -102,7 +102,7 @@ export const StudentManagementDrawer: React.FC<StudentManagementDrawerProps> = (
 
   if (!course) return null;
 
-  const handleAddStudent = async (studentId: number) => {
+  const handleAddStudent = async (studentId: string) => {
     setLoadingStudentId(studentId);
     setError('');
     setSuccessMessage('');
@@ -122,7 +122,7 @@ export const StudentManagementDrawer: React.FC<StudentManagementDrawerProps> = (
     }
   };
 
-  const handleRemoveStudent = async (studentId: number) => {
+  const handleRemoveStudent = async (studentId: string) => {
     setLoadingStudentId(studentId);
     setError('');
     setSuccessMessage('');

@@ -21,7 +21,7 @@ export type CourseDetails = {
   syllabus: SyllabusItem[];
 };
 
-const courseDetailsMap: Record<number, CourseDetails> = {
+const courseDetailsMap: Record<string, CourseDetails> = {
   1: {
     instructor: {
       name: 'Sarah Johnson',
@@ -141,6 +141,6 @@ const defaultCourseDetails: CourseDetails = {
   syllabus: [],
 };
 
-export const getCourseDetails = (courseId: number): CourseDetails => {
+export const getCourseDetails = (courseId: string): CourseDetails => {
   return courseDetailsMap[courseId] || defaultCourseDetails;
 };

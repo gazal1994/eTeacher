@@ -93,9 +93,9 @@ export const ReportPage: React.FC = () => {
       courseCounts[e.courseId] = (courseCounts[e.courseId] || 0) + 1;
     });
     const mostActiveCourseId = Object.keys(courseCounts).reduce((a, b) => 
-      courseCounts[a] > courseCounts[b] ? a : b, Object.keys(courseCounts)[0] || null
+      courseCounts[a] > courseCounts[b] ? a : b, Object.keys(courseCounts)[0] || ''
     );
-    const mostActiveCourse = report.find(r => r.courseId === mostActiveCourseId);
+    const mostActiveCourse = mostActiveCourseId ? report.find(r => r.courseId === mostActiveCourseId) : null;
 
     return {
       totalCourses,

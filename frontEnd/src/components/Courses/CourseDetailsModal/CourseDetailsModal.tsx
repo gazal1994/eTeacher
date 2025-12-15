@@ -11,7 +11,7 @@ type CourseDetailsModalProps = {
     enrolledCount: number;
     lastEnrolment: { enrolledAt: string } | null;
     weeklyCount: number;
-    recentStudents: Array<{ id: number; fullName: string }>;
+    recentStudents: Array<{ id: string; fullName: string }>;
     badge: 'popular' | 'idle' | 'new';
   };
   onManage: () => void;

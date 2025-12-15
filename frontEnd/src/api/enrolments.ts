@@ -15,8 +15,8 @@ export async function createEnrolment(
 }
 
 export async function deleteEnrolment(
-  studentId: number,
-  courseId: number
+  studentId: string,
+  courseId: string
 ): Promise<void> {
   return await apiFetch<void>(
     `/api/enrolments?studentId=${studentId}&courseId=${courseId}`,
