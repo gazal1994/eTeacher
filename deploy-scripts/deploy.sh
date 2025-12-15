@@ -43,9 +43,9 @@ sudo rm -rf /var/www/eteacher/frontend
 sudo cp -r frontEnd/dist /var/www/eteacher/frontend
 
 # Update nginx configuration
-sudo tee /etc/nginx/sites-available/eteacher > /dev/null <<'EOF'
+sudo tee /etc/nginx/conf.d/eteacher.conf > /dev/null <<'EOF'
 server {
-    listen 80;
+    listen 80 default_server;
     server_name _;
 
     # Frontend
@@ -69,12 +69,12 @@ server {
 }
 EOF
 
-# Enable nginx site
-sudo ln -sf /etc/nginx/sites-available/eteacher /etc/nginx/sites-enabled/
+# Test nginx configuration
 sudo nginx -t
 
-# Set permissions
-sudo chown -R www-data:www-data /var/www/eteacher
+# Set permissions - backend runs as ec2-user, frontend served by nginx (www-data)
+sudo chown -R ec2-user:ec2-user /var/www/eteacher/backend
+sudo chown -R www-data:www-data /var/www/eteacher/frontend
 sudo chmod -R 755 /var/www/eteacher
 
 # Start services
