@@ -70,6 +70,13 @@ server {
 }
 EOF
 
+# Fix any corrupted nginx.conf (remove orphaned location blocks)
+if ! sudo nginx -t 2>&1 | grep -q "syntax is ok"; then
+    echo "Nginx config has errors, attempting to fix..."
+    # Remove any orphaned location/error_page blocks outside server blocks
+    sudo sed -i '/^[[:space:]]*error_page.*50x\.html/,/^[[:space:]]*}/d' /etc/nginx/nginx.conf
+fi
+
 # Test nginx configuration
 sudo nginx -t
 
