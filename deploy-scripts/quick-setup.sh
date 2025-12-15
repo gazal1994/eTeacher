@@ -2,7 +2,7 @@
 set -e
 
 # Install packages
-sudo dnf install -y nginx wget git tar gzip --skip-broken
+sudo dnf install -y nginx wget git tar gzip libicu --skip-broken
 
 # Install .NET
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
@@ -25,7 +25,7 @@ Description=eTeacher Backend API
 After=network.target
 
 [Service]
-Type=notify
+Type=simple
 User=ec2-user
 WorkingDirectory=/var/www/eteacher/backend
 ExecStart=/home/ec2-user/.dotnet/dotnet /var/www/eteacher/backend/MiniLmsApi.dll
