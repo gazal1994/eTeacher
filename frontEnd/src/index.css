@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50;
+  transition: direction 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* RTL spacing adjustments */
+[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* RTL flexbox adjustments */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Smooth transitions for language switching */
+* {
+  transition-property: margin, padding;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}

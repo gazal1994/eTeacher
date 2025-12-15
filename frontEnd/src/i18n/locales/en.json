@@ -1,0 +1,164 @@
+{
+  "nav": {
+    "courses": "Courses",
+    "enrolments": "Enrolments",
+    "report": "Report",
+    "assign": "Assign"
+  },
+  "courses": {
+    "title": "Courses",
+    "subtitle": "Manage your courses and enrolments",
+    "addCourse": "Add Course",
+    "students": "{{count}} student",
+    "students_other": "{{count}} students",
+    "noEnrolments": "No enrolments yet",
+    "noCourses": "No courses yet",
+    "startByAdding": "Start by adding your first course using the button above.",
+    "courseName": "Course Name",
+    "description": "Description",
+    "enrolmentCount": "Enrolments"
+  },
+  "enrolments": {
+    "title": "Enrolments",
+    "subtitle": "View and manage student enrolments",
+    "student": "Student",
+    "course": "Course",
+    "enrolledAt": "Enrolled At",
+    "noEnrolments": "No enrolments yet",
+    "viewEnrolments": "View Enrolments"
+  },
+  "assign": {
+    "title": "Assign Students",
+    "subtitle": "Enrol students into courses",
+    "selectStudent": "Select Student",
+    "selectCourse": "Select Course",
+    "enrollStudent": "Enrol Student",
+    "chooseStudent": "Choose a student...",
+    "chooseCourse": "Choose a course...",
+    "successMessage": "Student successfully enrolled!",
+    "errorMessage": "Failed to enrol student. Please try again."
+  },
+  "report": {
+    "title": "Analytics Dashboard",
+    "subtitle": "Course performance and student engagement metrics",
+    "exportData": "Export Data",
+    "allTime": "All Time",
+    "thisWeek": "This Week",
+    "thisMonth": "This Month",
+    "kpis": {
+      "totalCourses": "Total Courses",
+      "totalEnrolments": "Total Enrolments",
+      "activeCourses": "Active Courses",
+      "idleCourses": "Idle Courses",
+      "avgEnrolments": "Avg Enrolments/Course"
+    },
+    "insights": {
+      "title": "Time-Based Insights",
+      "weekEnrolments": "This Week's Enrolments",
+      "monthEnrolments": "This Month's Enrolments",
+      "weekChange": "{{change}}% vs last week",
+      "monthChange": "{{change}}% vs last month"
+    },
+    "table": {
+      "course": "Course",
+      "students": "Students",
+      "status": "Status",
+      "avgGrowth": "Avg Growth",
+      "lastActivity": "Last Activity",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "idle": "Idle"
+    },
+    "modal": {
+      "courseDetails": "Course Details",
+      "studentList": "Student List",
+      "enrolmentTimeline": "Enrolment Timeline",
+      "close": "Close"
+    },
+    "export": {
+      "title": "Export Data",
+      "format": "Select Format",
+      "csv": "CSV",
+      "json": "JSON",
+      "preview": "Preview",
+      "download": "Download",
+      "cancel": "Cancel"
+    }
+  },
+  "actions": {
+    "manage": "Manage",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "add": "Add",
+    "view": "View",
+    "close": "Close"
+  },
+  "courseForm": {
+    "addTitle": "Add New Course",
+    "editTitle": "Edit Course",
+    "courseName": "Course Name",
+    "description": "Description",
+    "enterName": "Enter course name",
+    "enterDescription": "Enter course description",
+    "required": "This field is required"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "noData": "No data available",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort"
+  },
+  "tour": {
+    "step1": {
+      "title": "👋 Welcome to Mini LMS",
+      "description": "Manage courses, track students, and gain insights - all in one place. Let's take 60 seconds to show you around.",
+      "actionText": "Start Tour"
+    },
+    "step2": {
+      "title": "Browse and Manage Courses",
+      "description": "View all available courses, create new ones, or edit existing content. Your catalog starts here."
+    },
+    "step3": {
+      "title": "Quick Actions",
+      "description": "Add new courses, students, or enrolments instantly with these action buttons."
+    },
+    "step4": {
+      "title": "Student Management",
+      "description": "Access your complete student directory. View profiles, track progress, and manage enrolments."
+    },
+    "step5": {
+      "title": "Track Enrolments",
+      "description": "Monitor who's enrolled in what. Manage active enrolments and track learning progress across the platform."
+    },
+    "step6": {
+      "title": "Performance Analytics",
+      "description": "Get actionable insights with real-time reports. Understand trends, completion rates, and platform usage."
+    },
+    "step7": {
+      "title": "All Set!",
+      "description": "You now know the essentials. Explore at your own pace - you can always restart this tour from the settings.",
+      "actionText": "Start Using Platform"
+    },
+    "progress": {
+      "step": "Step",
+      "of": "of",
+      "complete": "complete"
+    },
+    "buttons": {
+      "next": "Next",
+      "back": "Back",
+      "skip": "Skip Tour",
+      "finish": "Finish",
+      "skipTour": "Skip Tour",
+      "help": "Help"
+    }
+  }
+}

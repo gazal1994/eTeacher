@@ -1,0 +1,220 @@
+.report-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.report-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.summary-label {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.report-table th,
+.report-table td {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.report-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.report-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.report-table .number-cell {
+  text-align: right;
+  font-weight: 600;
+}
+
+.report-table tfoot tr {
+  background-color: #f8f9fa;
+  font-weight: 700;
+}
+
+.report-table tfoot td {
+  border-bottom: none;
+  border-top: 2px solid #2c3e50;
+}
+
+.total-label {
+  text-align: left;
+  color: #2c3e50;
+}
+
+.total-value {
+  color: #3498db;
+  font-size: 1.25rem;
+}
+
+/* Analytics Dashboard Interactivity Styles */
+
+.analytics-clickable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.analytics-clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-clickable:active {
+  transform: translateY(0);
+}
+
+.kpi-card-clickable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.kpi-card-clickable::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0.75rem;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.kpi-card-clickable:hover::after {
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.kpi-card-clickable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.table-row-clickable {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.table-row-clickable:hover {
+  background-color: rgb(248, 250, 252) !important;
+}
+
+.cell-clickable {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  margin: -0.25rem -0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.15s ease;
+}
+
+.cell-clickable:hover {
+  background-color: rgb(241, 245, 249);
+  color: rgb(59, 130, 246);
+}
+
+.progress-bar-clickable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.progress-bar-clickable:hover {
+  transform: scaleY(1.5);
+}
+
+.insight-card-clickable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.insight-card-clickable:hover {
+  background-color: rgb(248, 250, 252);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.status-badge-clickable {
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.status-badge-clickable:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.export-button-clickable {
+  position: relative;
+  overflow: hidden;
+}
+
+.export-button-clickable::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.export-button-clickable:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background-color: rgb(30, 41, 59);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 50;
+}
+
+.tooltip:hover::before {
+  opacity: 1;
+}

@@ -1,0 +1,164 @@
+{
+  "nav": {
+    "courses": "קורסים",
+    "enrolments": "הרשמות",
+    "report": "דוחות",
+    "assign": "שיוך"
+  },
+  "courses": {
+    "title": "קורסים",
+    "subtitle": "נהל את הקורסים וההרשמות שלך",
+    "addCourse": "הוסף קורס",
+    "students": "סטודנט אחד",
+    "students_other": "{{count}} סטודנטים",
+    "noEnrolments": "אין הרשמות עדיין",
+    "noCourses": "אין קורסים עדיין",
+    "startByAdding": "התחל על ידי הוספת הקורס הראשון שלך באמצעות הכפתור למעלה.",
+    "courseName": "שם הקורס",
+    "description": "תיאור",
+    "enrolmentCount": "הרשמות"
+  },
+  "enrolments": {
+    "title": "הרשמות",
+    "subtitle": "צפה ונהל הרשמות סטודנטים",
+    "student": "סטודנט",
+    "course": "קורס",
+    "enrolledAt": "תאריך הרשמה",
+    "noEnrolments": "אין הרשמות עדיין",
+    "viewEnrolments": "צפה בהרשמות"
+  },
+  "assign": {
+    "title": "שיוך סטודנטים",
+    "subtitle": "רשום סטודנטים לקורסים",
+    "selectStudent": "בחר סטודנט",
+    "selectCourse": "בחר קורס",
+    "enrollStudent": "רשום סטודנט",
+    "chooseStudent": "בחר סטודנט...",
+    "chooseCourse": "בחר קורס...",
+    "successMessage": "הסטודנט נרשם בהצלחה!",
+    "errorMessage": "הרשמה נכשלה. אנא נסה שוב."
+  },
+  "report": {
+    "title": "לוח בקרה אנליטי",
+    "subtitle": "ביצועי קורסים ומדדי מעורבות סטודנטים",
+    "exportData": "ייצוא נתונים",
+    "allTime": "כל הזמנים",
+    "thisWeek": "השבוע",
+    "thisMonth": "החודש",
+    "kpis": {
+      "totalCourses": "סה״כ קורסים",
+      "totalEnrolments": "סה״כ הרשמות",
+      "activeCourses": "קורסים פעילים",
+      "idleCourses": "קורסים לא פעילים",
+      "avgEnrolments": "ממוצע הרשמות לקורס"
+    },
+    "insights": {
+      "title": "תובנות זמן",
+      "weekEnrolments": "הרשמות השבוע",
+      "monthEnrolments": "הרשמות החודש",
+      "weekChange": "{{change}}% לעומת שבוע שעבר",
+      "monthChange": "{{change}}% לעומת חודש שעבר"
+    },
+    "table": {
+      "course": "קורס",
+      "students": "סטודנטים",
+      "status": "סטטוס",
+      "avgGrowth": "צמיחה ממוצעת",
+      "lastActivity": "פעילות אחרונה",
+      "actions": "פעולות"
+    },
+    "status": {
+      "active": "פעיל",
+      "idle": "לא פעיל"
+    },
+    "modal": {
+      "courseDetails": "פרטי קורס",
+      "studentList": "רשימת סטודנטים",
+      "enrolmentTimeline": "ציר זמן הרשמות",
+      "close": "סגור"
+    },
+    "export": {
+      "title": "ייצוא נתונים",
+      "format": "בחר פורמט",
+      "csv": "CSV",
+      "json": "JSON",
+      "preview": "תצוגה מקדימה",
+      "download": "הורד",
+      "cancel": "ביטול"
+    }
+  },
+  "actions": {
+    "manage": "נהל",
+    "edit": "ערוך",
+    "delete": "מחק",
+    "cancel": "ביטול",
+    "confirm": "אישור",
+    "save": "שמור",
+    "add": "הוסף",
+    "view": "צפה",
+    "close": "סגור"
+  },
+  "courseForm": {
+    "addTitle": "הוסף קורס חדש",
+    "editTitle": "ערוך קורס",
+    "courseName": "שם הקורס",
+    "description": "תיאור",
+    "enterName": "הזן שם קורס",
+    "enterDescription": "הזן תיאור קורס",
+    "required": "שדה זה הוא חובה"
+  },
+  "common": {
+    "loading": "טוען...",
+    "error": "שגיאה",
+    "success": "הצלחה",
+    "noData": "אין נתונים זמינים",
+    "search": "חיפוש",
+    "filter": "סינון",
+    "sort": "מיון"
+  },
+  "tour": {
+    "step1": {
+      "title": "ברוכים הבאים לפלטפורמת הלמידה שלכם",
+      "description": "נהלו קורסים, עקבו אחר סטודנטים וקבלו תובנות - הכל במקום אחד. בואו ניקח 60 שניות להראות לכם את הסביבה.",
+      "actionText": "התחל סיור"
+    },
+    "step2": {
+      "title": "עיון וניהול קורסים",
+      "description": "צפו בכל הקורסים הזמינים, צרו חדשים או ערכו תוכן קיים. הקטלוג שלכם מתחיל כאן."
+    },
+    "step3": {
+      "title": "פעולות מהירות",
+      "description": "הוסיפו קורסים, סטודנטים או הרשמות חדשים מיידית עם כפתורי הפעולה האלה."
+    },
+    "step4": {
+      "title": "ניהול סטודנטים",
+      "description": "גישה למדריך הסטודנטים המלא שלכם. צפו בפרופילים, עקבו אחר התקדמות ונהלו הרשמות."
+    },
+    "step5": {
+      "title": "מעקב אחר הרשמות",
+      "description": "עקבו אחר מי רשום למה. נהלו הרשמות פעילות ועקבו אחר התקדמות הלמידה בכל הפלטפורמה."
+    },
+    "step6": {
+      "title": "אנליטיקת ביצועים",
+      "description": "קבלו תובנות ישימות עם דוחות בזמן אמת. הבינו מגמות, שיעורי השלמה ושימוש בפלטפורמה."
+    },
+    "step7": {
+      "title": "הכל מוכן!",
+      "description": "כעת אתם מכירים את העיקרים. חקרו בקצב שלכם - תמיד תוכלו להתחיל מחדש את הסיור הזה מההגדרות.",
+      "actionText": "התחל להשתמש בפלטפורמה"
+    },
+    "progress": {
+      "step": "שלב",
+      "of": "מתוך",
+      "complete": "הושלם"
+    },
+    "buttons": {
+      "next": "הבא",
+      "back": "חזור",
+      "skip": "דלג על הסיור",
+      "finish": "סיים",
+      "skipTour": "דלג על הסיור",
+      "help": "עזרה"
+    }
+  }
+}
