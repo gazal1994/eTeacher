@@ -10,8 +10,8 @@ type EnrolmentDrawerProps = {
   course: Course | null;
   students: Student[];
   enrolments: Enrolment[];
-  onAddEnrolment: (studentId: number) => Promise<void>;
-  onDeleteEnrolment: (studentId: number) => Promise<void>;
+  onAddEnrolment: (studentId: string) => Promise<void>;
+  onDeleteEnrolment: (studentId: string) => Promise<void>;
   studentsLoading: boolean;
 };
 
@@ -27,11 +27,11 @@ export const EnrolmentDrawer: React.FC<EnrolmentDrawerProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState('add');
   const [searchTerm, setSearchTerm] = useState('');
-  const [loadingStudentId, setLoadingStudentId] = useState<number | null>(null);
+  const [loadingStudentId, setLoadingStudentId] = useState<string | null>(null);
   const [error, setError] = useState<string>('');
   const [successMessage, setSuccessMessage] = useState<string>('');
   const [prevIsOpen, setPrevIsOpen] = useState(false);
-  const [selectedStudentIds, setSelectedStudentIds] = useState<number[]>([]);
+  const [selectedStudentIds, setSelectedStudentIds] = useState<string[]>([]);
   const [isAssigning, setIsAssigning] = useState(false);
 
   // Get enrolled students for this course - memoized to prevent recalculation

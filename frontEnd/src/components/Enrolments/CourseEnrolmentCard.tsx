@@ -14,7 +14,6 @@ export const CourseEnrolmentCard: React.FC<CourseEnrolmentCardProps> = ({
   enrolments,
   students,
   onManage,
-  isLoading = false,
 }) => {
   // Get enrolled students for this course
   const enrolledStudents = enrolments

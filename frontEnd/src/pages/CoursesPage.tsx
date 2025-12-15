@@ -61,7 +61,7 @@ export const CoursesPage: React.FC = () => {
   }, [successMessage, dispatch]);
 
   // Helper functions for course statistics
-  const getCourseStats = (courseId: number) => {
+  const getCourseStats = (courseId: string) => {
     const courseEnrolments = enrolments.filter(e => e.courseId === courseId);
     const enrolledCount = courseEnrolments.length;
     

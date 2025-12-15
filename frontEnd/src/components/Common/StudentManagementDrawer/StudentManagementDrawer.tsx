@@ -3,7 +3,6 @@ import { Course, Student, Enrolment } from '../../../types/models';
 import { Drawer } from '../Drawer/Drawer';
 import { Tabs } from '../Tabs/Tabs';
 import { ErrorBanner } from '../ErrorBanner/ErrorBanner';
-import * as enrolmentsApi from '../../../api/enrolments';
 
 type StudentManagementDrawerProps = {
   isOpen: boolean;
@@ -12,8 +11,8 @@ type StudentManagementDrawerProps = {
   students: Student[];
   enrolments: Enrolment[];
   studentsLoading: boolean;
-  onAddEnrolment: (studentId: number) => Promise<void>;
-  onDeleteEnrolment: (studentId: number) => Promise<void>;
+  onAddEnrolment: (studentId: string) => Promise<void>;
+  onDeleteEnrolment: (studentId: string) => Promise<void>;
 };
 
 export const StudentManagementDrawer: React.FC<StudentManagementDrawerProps> = ({
@@ -28,12 +27,12 @@ export const StudentManagementDrawer: React.FC<StudentManagementDrawerProps> = (
 }) => {
   const [activeTab, setActiveTab] = useState('add');
   const [searchTerm, setSearchTerm] = useState('');
-  const [loadingStudentId, setLoadingStudentId] = useState<number | null>(null);
+  const [loadingStudentId, setLoadingStudentId] = useState<string | null>(null);
   const [error, setError] = useState<string>('');
   const [successMessage, setSuccessMessage] = useState<string>('');
   const [prevIsOpen, setPrevIsOpen] = useState(false);
-  const [selectedStudentIds, setSelectedStudentIds] = useState<number[]>([]);
-  const [selectedEnrolledIds, setSelectedEnrolledIds] = useState<number[]>([]);
+  const [selectedStudentIds, setSelectedStudentIds] = useState<string[]>([]);
+  const [selectedEnrolledIds, setSelectedEnrolledIds] = useState<string[]>([]);
   const [isAssigning, setIsAssigning] = useState(false);
   const [isRemoving, setIsRemoving] = useState(false);
 
@@ -139,7 +138,7 @@ export const StudentManagementDrawer: React.FC<StudentManagementDrawerProps> = (
     }
   };
 
-  const handleToggleStudent = (studentId: number) => {
+  const handleToggleStudent = (studentId: string) => {
     setSelectedStudentIds(prev => 
       prev.includes(studentId)
         ? prev.filter(id => id !== studentId)
@@ -155,7 +154,7 @@ export const StudentManagementDrawer: React.FC<StudentManagementDrawerProps> = (
     }
   };
 
-  const handleToggleEnrolled = (studentId: number) => {
+  const handleToggleEnrolled = (studentId: string) => {
     setSelectedEnrolledIds(prev => 
       prev.includes(studentId)
         ? prev.filter(id => id !== studentId)
@@ -231,7 +230,6 @@ export const StudentManagementDrawer: React.FC<StudentManagementDrawerProps> = (
         setError(`${failCount} student(s) could not be assigned (may already be enrolled).`);
       }
 
-      onEnrolmentSuccess();
       setSelectedStudentIds([]);
     } finally {
       setIsAssigning(false);

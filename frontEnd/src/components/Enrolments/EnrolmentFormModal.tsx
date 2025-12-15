@@ -5,7 +5,7 @@ import { Course, Student, Enrolment } from '../../types/models';
 type EnrolmentFormModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (studentId: number, courseId: number) => void;
+  onSubmit: (studentId: string, courseId: string) => void;
   courses: Course[];
   students: Student[];
   enrolment?: Enrolment | null;
@@ -21,8 +21,8 @@ export const EnrolmentFormModal: React.FC<EnrolmentFormModalProps> = ({
   enrolment = null,
   isLoading = false,
 }) => {
-  const [studentId, setStudentId] = useState<number | ''>('');
-  const [courseId, setCourseId] = useState<number | ''>('');
+  const [studentId, setStudentId] = useState<string | ''>('');
+  const [courseId, setCourseId] = useState<string | ''>('');
   const [error, setError] = useState<string>('');
 
   const isEditMode = !!enrolment;

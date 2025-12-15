@@ -11,7 +11,7 @@ import { StudentManagementDrawer } from '../components/Common/StudentManagementD
 import { Course, Enrolment } from '../types/models';
 
 type GroupedEnrolments = {
-  courseId: number;
+  courseId: string;
   enrolments: Enrolment[];
 };
 
@@ -63,7 +63,7 @@ export const EnrolmentsPage: React.FC = () => {
     setSelectedCourse(null);
   };
 
-  const handleAddEnrolment = async (studentId: number) => {
+  const handleAddEnrolment = async (studentId: string) => {
     if (!selectedCourse) return;
     
     await dispatch(createEnrolment({ 
@@ -72,7 +72,7 @@ export const EnrolmentsPage: React.FC = () => {
     })).unwrap();
   };
 
-  const handleDeleteEnrolment = async (studentId: number) => {
+  const handleDeleteEnrolment = async (studentId: string) => {
     if (!selectedCourse) return;
     
     await dispatch(deleteEnrolment({
