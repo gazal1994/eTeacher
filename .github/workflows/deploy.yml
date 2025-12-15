@@ -81,14 +81,31 @@ jobs:
       - name: Verify Deployment
         env:
           HOST: ${{ secrets.EC2_HOST }}
+          PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          USER: ${{ secrets.EC2_USER }}
         run: |
           echo "Waiting for services to start..."
           sleep 10
           
-          # Check if backend is responding
-          curl -f http://${HOST}:5000/api/courses || exit 1
-          echo "Backend is up and running!"
+          # Setup SSH key
+          echo "$PRIVATE_KEY" > private_key.pem
+          chmod 600 private_key.pem
           
-          # Check if frontend is accessible
-          curl -f http://${HOST}:80 || exit 1
-          echo "Frontend is up and running!"
+          # Check backend service status on EC2
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} "sudo systemctl is-active eteacher-backend" || exit 1
+          echo "Backend service is running!"
+          
+          # Check backend health locally on EC2
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} "curl -f http://localhost:5000/api/courses" || exit 1
+          echo "Backend API is responding!"
+          
+          # Check nginx service status
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} "sudo systemctl is-active nginx" || exit 1
+          echo "Nginx is running!"
+          
+          # Check if frontend is accessible from internet
+          curl -f http://${HOST}/ || exit 1
+          echo "Frontend is accessible!"
+          
+          # Cleanup
+          rm -f private_key.pem
