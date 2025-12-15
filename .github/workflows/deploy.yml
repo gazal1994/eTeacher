@@ -1,0 +1,94 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Build Backend
+        run: |
+          cd backEnd/MiniLmsApi
+          dotnet restore
+          dotnet publish -c Release -o publish
+
+      - name: Build Frontend
+        run: |
+          cd frontEnd
+          npm ci
+          npm run build
+
+      - name: Deploy to EC2
+        env:
+          PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          HOST: ${{ secrets.EC2_HOST }}
+          USER: ${{ secrets.EC2_USER }}
+        run: |
+          echo "$PRIVATE_KEY" > private_key.pem
+          chmod 600 private_key.pem
+          
+          # Create deployment package
+          tar -czf deployment.tar.gz backEnd/MiniLmsApi/publish frontEnd/dist deploy-scripts
+          
+          # Copy to EC2
+          scp -i private_key.pem -o StrictHostKeyChecking=no deployment.tar.gz ${USER}@${HOST}:/tmp/
+          
+          # Execute deployment script on EC2
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} << 'EOF'
+            cd /var/www/eteacher
+            
+            # Backup current version
+            if [ -d "current" ]; then
+              mv current backup-$(date +%Y%m%d-%H%M%S)
+            fi
+            
+            # Extract new version
+            mkdir -p current
+            tar -xzf /tmp/deployment.tar.gz -C current/
+            
+            # Run deployment script
+            cd current
+            chmod +x deploy-scripts/deploy.sh
+            ./deploy-scripts/deploy.sh
+            
+            # Cleanup
+            rm /tmp/deployment.tar.gz
+            
+            # Keep only last 3 backups
+            ls -dt backup-* | tail -n +4 | xargs rm -rf
+          EOF
+          
+          rm -f private_key.pem
+
+      - name: Verify Deployment
+        env:
+          HOST: ${{ secrets.EC2_HOST }}
+        run: |
+          echo "Waiting for services to start..."
+          sleep 10
+          
+          # Check if backend is responding
+          curl -f http://${HOST}:5000/api/courses || exit 1
+          echo "Backend is up and running!"
+          
+          # Check if frontend is accessible
+          curl -f http://${HOST}:80 || exit 1
+          echo "Frontend is up and running!"
