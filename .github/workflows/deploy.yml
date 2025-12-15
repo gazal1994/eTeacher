@@ -85,27 +85,54 @@ jobs:
           USER: ${{ secrets.EC2_USER }}
         run: |
           echo "Waiting for services to start..."
-          sleep 10
+          sleep 20
           
           # Setup SSH key
           echo "$PRIVATE_KEY" > private_key.pem
           chmod 600 private_key.pem
           
-          # Check backend service status on EC2
-          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} "sudo systemctl is-active eteacher-backend" || exit 1
-          echo "Backend service is running!"
+          # Check backend service status with retries
+          echo "Checking backend service..."
+          for i in {1..5}; do
+            if ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} "sudo systemctl is-active eteacher-backend" 2>&1 | grep -q "active"; then
+              echo "Backend service is running!"
+              break
+            else
+              echo "Attempt $i: Backend not ready yet, waiting..."
+              if [ $i -eq 5 ]; then
+                echo "Backend service failed to start. Checking logs:"
+                ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} "sudo systemctl status eteacher-backend --no-pager || true"
+                ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} "sudo journalctl -u eteacher-backend -n 50 --no-pager || true"
+                exit 1
+              fi
+              sleep 5
+            fi
+          done
           
           # Check backend health locally on EC2
-          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} "curl -f http://localhost:5000/api/courses" || exit 1
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} "curl -f http://localhost:5000/api/courses > /dev/null 2>&1" || {
+            echo "Backend API not responding. Checking service status:"
+            ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} "sudo systemctl status eteacher-backend --no-pager"
+            exit 1
+          }
           echo "Backend API is responding!"
           
           # Check nginx service status
-          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} "sudo systemctl is-active nginx" || exit 1
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} "sudo systemctl is-active nginx" || {
+            echo "Nginx is not running. Checking status:"
+            ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} "sudo systemctl status nginx --no-pager"
+            exit 1
+          }
           echo "Nginx is running!"
           
           # Check if frontend is accessible from internet
-          curl -f http://${HOST}/ || exit 1
+          curl -f http://${HOST}/ > /dev/null 2>&1 || {
+            echo "Frontend not accessible from internet"
+            exit 1
+          }
           echo "Frontend is accessible!"
+          
+          echo "✅ Deployment verified successfully!"
           
           # Cleanup
           rm -f private_key.pem
