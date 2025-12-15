@@ -46,6 +46,7 @@ sudo cp -r frontEnd/dist /var/www/eteacher/frontend
 sudo tee /etc/nginx/conf.d/eteacher.conf > /dev/null <<'EOF'
 server {
     listen 80 default_server;
+    listen [::]:80 default_server;
     server_name _;
 
     # Frontend
@@ -72,15 +73,15 @@ EOF
 # Test nginx configuration
 sudo nginx -t
 
-# Set permissions - backend runs as ec2-user, frontend served by nginx (www-data)
+# Set permissions - backend runs as ec2-user, frontend served by nginx
 sudo chown -R ec2-user:ec2-user /var/www/eteacher/backend
-sudo chown -R www-data:www-data /var/www/eteacher/frontend
+sudo chown -R nginx:nginx /var/www/eteacher/frontend
 sudo chmod -R 755 /var/www/eteacher
 
 # Start services
 echo "Starting services..."
-sudo systemctl start eteacher-backend
-sudo systemctl start nginx
+sudo systemctl restart eteacher-backend
+sudo systemctl restart nginx
 
 # Check service status
 echo "Checking service status..."
