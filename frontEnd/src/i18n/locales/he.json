@@ -1,102 +1,222 @@
 {
+  "common": {
+    "companyName": "ס.ש. אבן יסוד – סעיד ג׳בארין ושאדי אגבאריה בע״מ",
+    "companyNameShort": "ס.ש. אבן יסוד",
+    "slogan": "בונים את חלומכם בידיים אמינות",
+    "phone": "+972 52-633-9367",
+    "email": "Saied.312.94@gmail.com",
+    "address": "חיפה, ישראל",
+    "loading": "טוען...",
+    "error": "שגיאה",
+    "success": "הצלחה",
+    "noData": "אין נתונים זמינים",
+    "search": "חיפוש",
+    "filter": "סינון",
+    "sort": "מיון"
+  },
   "nav": {
-    "courses": "קורסים",
-    "enrolments": "הרשמות",
-    "report": "דוחות",
-    "assign": "שיוך"
+    "home": "בית",
+    "services": "שירותים",
+    "projects": "פרויקטים",
+    "about": "אודות",
+    "contact": "צור קשר",
+    "admin": "ניהול"
   },
-  "courses": {
-    "title": "קורסים",
-    "subtitle": "נהל את הקורסים וההרשמות שלך",
-    "addCourse": "הוסף קורס",
-    "students": "סטודנט אחד",
-    "students_other": "{{count}} סטודנטים",
-    "noEnrolments": "אין הרשמות עדיין",
-    "noCourses": "אין קורסים עדיין",
-    "startByAdding": "התחל על ידי הוספת הקורס הראשון שלך באמצעות הכפתור למעלה.",
-    "courseName": "שם הקורס",
-    "description": "תיאור",
-    "enrolmentCount": "הרשמות"
-  },
-  "enrolments": {
-    "title": "הרשמות",
-    "subtitle": "צפה ונהל הרשמות סטודנטים",
-    "student": "סטודנט",
-    "course": "קורס",
-    "enrolledAt": "תאריך הרשמה",
-    "noEnrolments": "אין הרשמות עדיין",
-    "viewEnrolments": "צפה בהרשמות"
-  },
-  "assign": {
-    "title": "שיוך סטודנטים",
-    "subtitle": "רשום סטודנטים לקורסים",
-    "selectStudent": "בחר סטודנט",
-    "selectCourse": "בחר קורס",
-    "enrollStudent": "רשום סטודנט",
-    "chooseStudent": "בחר סטודנט...",
-    "chooseCourse": "בחר קורס...",
-    "successMessage": "הסטודנט נרשם בהצלחה!",
-    "errorMessage": "הרשמה נכשלה. אנא נסה שוב."
-  },
-  "report": {
-    "title": "לוח בקרה אנליטי",
-    "subtitle": "ביצועי קורסים ומדדי מעורבות סטודנטים",
-    "exportData": "ייצוא נתונים",
-    "allTime": "כל הזמנים",
-    "thisWeek": "השבוע",
-    "thisMonth": "החודש",
-    "kpis": {
-      "totalCourses": "סה״כ קורסים",
-      "totalEnrolments": "סה״כ הרשמות",
-      "activeCourses": "קורסים פעילים",
-      "idleCourses": "קורסים לא פעילים",
-      "avgEnrolments": "ממוצע הרשמות לקורס"
+  "home": {
+    "hero": {
+      "title": "בונים את העתיד ביחד",
+      "subtitle": "ניסיון של למעלה מ-15 שנה בתחום הבנייה והפיתוח",
+      "cta": "צפו בפרויקטים שלנו",
+      "contact": "קבלו הצעת מחיר"
     },
-    "insights": {
-      "title": "תובנות זמן",
-      "weekEnrolments": "הרשמות השבוע",
-      "monthEnrolments": "הרשמות החודש",
-      "weekChange": "{{change}}% לעומת שבוע שעבר",
-      "monthChange": "{{change}}% לעומת חודש שעבר"
+    "stats": {
+      "projects": "פרויקטים שהושלמו",
+      "clients": "לקוחות מרוצים",
+      "experience": "שנות ניסיון",
+      "team": "אנשי מקצוע"
     },
-    "table": {
-      "course": "קורס",
-      "students": "סטודנטים",
-      "status": "סטטוס",
-      "avgGrowth": "צמיחה ממוצעת",
-      "lastActivity": "פעילות אחרונה",
-      "actions": "פעולות"
-    },
-    "status": {
-      "active": "פעיל",
-      "idle": "לא פעיל"
-    },
-    "modal": {
-      "courseDetails": "פרטי קורס",
-      "studentList": "רשימת סטודנטים",
-      "enrolmentTimeline": "ציר זמן הרשמות",
-      "close": "סגור"
-    },
-    "export": {
-      "title": "ייצוא נתונים",
-      "format": "בחר פורמט",
-      "csv": "CSV",
-      "json": "JSON",
-      "preview": "תצוגה מקדימה",
-      "download": "הורד",
-      "cancel": "ביטול"
+    "whyUs": {
+      "title": "למה לבחור בנו",
+      "quality": {
+        "title": "איכות ללא פשרות",
+        "description": "משתמשים אך ורק בחומרי גלם מהמובחרים ושומרים על תקני איכות מחמירים"
+      },
+      "experience": {
+        "title": "ניסיון עשיר",
+        "description": "למעלה מ-15 שנות ניסיון מוכח בביצוע פרויקטים מורכבים בכל הסקטורים"
+      },
+      "time": {
+        "title": "עמידה בלוחות זמנים",
+        "description": "מחויבות מלאה ללוחות הזמנים ומסירה בזמן - ללא פשרות"
+      },
+      "price": {
+        "title": "שקיפות מחירים",
+        "description": "תמחור הוגן ושקוף עם תמורה מיטבית להשקעה שלכם"
+      }
     }
   },
+  "services": {
+    "title": "השירותים שלנו",
+    "subtitle": "מגוון רחב של פתרונות בנייה ופיתוח מקצועיים",
+    "residential": {
+      "title": "פרויקטי מגורים",
+      "description": "בניית וילות יוקרה, דירות ומתחמי מגורים בסטנדרטים הגבוהים ביותר"
+    },
+    "commercial": {
+      "title": "פרויקטים מסחריים",
+      "description": "הקמת מבני משרדים, מרכזים מסחריים ומבנים ציבוריים בעיצוב מתקדם"
+    },
+    "infrastructure": {
+      "title": "פרויקטי תשתית",
+      "description": "ביצוע פרויקטי כבישים, גשרים ותשתיות ציבוריות חיוניות"
+    },
+    "renovation": {
+      "title": "שיפוץ ושדרוג",
+      "description": "חידוש ושדרוג מבנים קיימים בפתרונות חדשניים ויעילים"
+    },
+    "consultation": {
+      "title": "ייעוץ הנדסי",
+      "description": "ייעוץ הנדסי מקצועי מתכנון ראשוני ועד ביצוע סופי"
+    },
+    "management": {
+      "title": "ניהול פרויקטים",
+      "description": "ניהול מקצועי של פרויקטים מתכנון ראשוני ועד למסירה סופית"
+    }
+  },
+  "projects": {
+    "title": "הפרויקטים שלנו",
+    "subtitle": "צפה במבחר מעבודותינו המובחרות",
+    "filter": {
+      "all": "הכל",
+      "residential": "מגורים",
+      "commercial": "מסחרי",
+      "infrastructure": "תשתיות"
+    },
+    "status": {
+      "completed": "הושלם",
+      "in-progress": "בביצוע",
+      "planned": "מתוכנן"
+    },
+    "details": {
+      "category": "קטגוריה",
+      "location": "מיקום",
+      "completionDate": "תאריך השלמה",
+      "client": "לקוח",
+      "status": "סטטוס",
+      "gallery": "גלריית תמונות",
+      "backToProjects": "חזרה לפרויקטים"
+    },
+    "noProjects": "אין פרויקטים זמינים כרגע"
+  },
+  "about": {
+    "title": "אודותינו",
+    "subtitle": "סיפור ההצלחה שלנו בעולם הבנייה והפיתוח",
+    "story": {
+      "title": "הסיפור שלנו",
+      "paragraph1": "ס.ש. אבן יסוד נוסדה על ידי המהנדסים סעיד ג׳בארין ושאדי אגבאריה במטרה לספק פתרונות בנייה מתקדמים ואיכותיים באזור הצפון.",
+      "paragraph2": "עם ניסיון מוכח של למעלה מ-15 שנה, אנו מתמחים בביצוע פרויקטים למגורים, מסחר ותשתיות תוך שמירה על איכות מעולה ועמידה בלוחות זמנים."
+    },
+    "mission": {
+      "title": "החזון שלנו",
+      "description": "להוביל את תחום הבנייה והפיתוח באיכות, חדשנות ומקצועיות, תוך הגשמת חלומות הלקוחות שלנו ויצירת ערך מתמשך לקהילה."
+    },
+    "values": {
+      "title": "הערכים שלנו",
+      "quality": "איכות",
+      "integrity": "יושרה",
+      "innovation": "חדשנות",
+      "commitment": "מחויבות"
+    },
+    "team": {
+      "title": "הצוות המנהל",
+      "saeed": {
+        "name": "סעיד ג׳בארין",
+        "role": "שותף מייסד ומנכ״ל"
+      },
+      "shadi": {
+        "name": "שאדי אגבאריה",
+        "role": "שותף מייסד ומנהל טכני"
+      }
+    }
+  },
+  "contact": {
+    "title": "צרו קשר",
+    "subtitle": "נשמח לשמוע ממכם ולענות על כל שאלה",
+    "form": {
+      "name": "שם מלא",
+      "email": "דוא״ל",
+      "phone": "טלפון",
+      "projectType": "סוג הפרויקט",
+      "selectProjectType": "בחרו סוג פרויקט...",
+      "message": "פרטי הפרויקט והודעה",
+      "send": "שלחו הודעה",
+      "sending": "שולח...",
+      "success": "תודה שפניתם אלינו! נחזור אליכם בהקדם האפשרי.",
+      "error": "אירעה שגיאה בשליחת ההודעה. אנא נסו שוב."
+    },
+    "projectTypes": {
+      "residential": "פרויקט מגורים",
+      "commercial": "פרויקט מסחרי",
+      "infrastructure": "פרויקט תשתית",
+      "renovation": "שיפוץ ושדרוג",
+      "other": "אחר"
+    },
+    "info": {
+      "title": "פרטי התקשרות",
+      "phone": "טלפון",
+      "email": "דוא״ל",
+      "address": "כתובת",
+      "hours": "שעות פעילות",
+      "hoursValue": "ראשון - חמישי: 08:00 - 17:00"
+    }
+  },
+  "admin": {
+    "login": {
+      "title": "התחברות",
+      "username": "שם משתמש",
+      "password": "סיסמה",
+      "submit": "כניסה",
+      "loading": "מתחבר...",
+      "error": "שם משתמש או סיסמה שגויים"
+    },
+    "dashboard": {
+      "title": "לוח בקרה",
+      "welcome": "שלום",
+      "logout": "התנתקות"
+    },
+    "projects": {
+      "title": "ניהול פרויקטים",
+      "add": "הוסף פרויקט חדש",
+      "edit": "ערוך פרויקט",
+      "delete": "מחק פרויקט",
+      "confirmDelete": "האם אתה בטוח שברצונך למחוק פרויקט זה?"
+    },
+    "leads": {
+      "title": "פניות",
+      "new": "חדש",
+      "contacted": "נוצר קשר",
+      "closed": "סגור",
+      "notes": "הערות",
+      "updateStatus": "עדכן סטטוס"
+    }
+  },
+  "footer": {
+    "about": "ס.ש. אבן יסוד היא חברה מובילה בתחום הבנייה והפיתוח, המספקת פתרונות מקצועיים ואיכותיים כבר למעלה מ-15 שנה.",
+    "quickLinks": "קישורים מהירים",
+    "contactUs": "צרו קשר",
+    "followUs": "עקבו אחרינו",
+    "rights": "© 2026 ס.ש. אבן יסוד – כל הזכויות שמורות"
+  },
   "actions": {
-    "manage": "נהל",
-    "edit": "ערוך",
-    "delete": "מחק",
+    "viewDetails": "צפו בפרטים",
+    "learnMore": "למידע נוסף",
+    "getQuote": "קבלו הצעת מחיר",
     "cancel": "ביטול",
     "confirm": "אישור",
-    "save": "שמור",
-    "add": "הוסף",
-    "view": "צפה",
-    "close": "סגור"
+    "save": "שמירה",
+    "edit": "עריכה",
+    "delete": "מחיקה",
+    "close": "סגירה"
   },
   "courseForm": {
     "addTitle": "הוסף קורס חדש",
@@ -107,14 +227,86 @@
     "enterDescription": "הזן תיאור קורס",
     "required": "שדה זה הוא חובה"
   },
-  "common": {
-    "loading": "טוען...",
-    "error": "שגיאה",
-    "success": "הצלחה",
+  "courses": {
+    "title": "ניהול קורסים",
+    "subtitle": "צפו בכל הקורסים שלכם ונהלו אותם",
+    "addCourse": "הוסף קורס חדש",
+    "noCourses": "עדיין לא נוצרו קורסים",
+    "startByAdding": "התחילו על ידי הוספת הקורס הראשון שלכם",
+    "students": "{{count}} סטודנטים",
+    "noEnrolments": "אין הרשמות",
+    "lastEnrolment": "הרשמה אחרונה",
+    "viewDetails": "צפו בפרטים",
+    "manageStudents": "נהל סטודנטים",
+    "editCourse": "ערוך קורס",
+    "deleteCourse": "מחק קורס",
+    "confirmDelete": "האם אתה בטוח שברצונך למחוק קורס זה?",
+    "deleteSuccess": "הקורס נמחק בהצלחה",
+    "deleteError": "שגיאה במחיקת הקורס",
+    "addSuccess": "הקורס נוסף בהצלחה",
+    "addError": "שגיאה בהוספת הקורס",
+    "editSuccess": "הקורס עודכן בהצלחה",
+    "editError": "שגיאה בעדכון הקורס"
+  },
+  "enrolments": {
+    "title": "ניהול הרשמות",
+    "subtitle": "עקבו אחר כל ההרשמות של הסטודנטים לקורסים",
+    "addEnrolment": "הוסף הרשמה חדשה",
+    "noEnrolments": "אין הרשמות",
+    "enrolledStudents": "סטודנטים רשומים",
+    "addStudent": "הוסף סטודנט",
+    "removeStudent": "הסר סטודנט",
+    "enrollSuccess": "הסטודנט נרשם בהצלחה",
+    "enrollError": "שגיאה ברישום הסטודנט",
+    "removeSuccess": "הסטודנט הוסר בהצלחה",
+    "removeError": "שגיאה בהסרת הסטודנט",
+    "confirmRemove": "האם אתה בטוח שברצונך להסיר סטודנט זה?"
+  },
+  "students": {
+    "title": "ניהול סטודנטים",
+    "subtitle": "נהלו את כל הסטודנטים במערכת",
+    "addStudent": "הוסף סטודנט חדש",
+    "noStudents": "אין סטודנטים במערכת",
+    "fullName": "שם מלא",
+    "email": "דוא״ל",
+    "enrolledCourses": "קורסים רשומים",
+    "addSuccess": "הסטודנט נוסף בהצלחה",
+    "addError": "שגיאה בהוספת הסטודנט",
+    "editSuccess": "פרטי הסטודנט עודכנו בהצלחה",
+    "editError": "שגיאה בעדכון פרטי הסטודנט",
+    "deleteSuccess": "הסטודנט נמחק בהצלחה",
+    "deleteError": "שגיאה במחיקת הסטודנט",
+    "confirmDelete": "האם אתה בטוח שברצונך למחוק סטודנט זה?"
+  },
+  "report": {
+    "title": "דוחות ואנליטיקה",
+    "subtitle": "סקירה כוללת של כל הקורסים וההרשמות",
+    "kpis": {
+      "totalCourses": "סה״כ קורסים",
+      "totalEnrolments": "סה״כ הרשמות",
+      "activeCourses": "קורסים פעילים",
+      "idleCourses": "קורסים לא פעילים",
+      "avgEnrolments": "ממוצע הרשמות"
+    },
+    "filters": {
+      "all": "הכל",
+      "active": "פעיל",
+      "idle": "לא פעיל"
+    },
+    "sort": {
+      "most": "הכי מבוקש",
+      "least": "הכי פחות מבוקש",
+      "az": "א-ת",
+      "recent": "אחרונים"
+    },
+    "export": {
+      "csv": "ייצא CSV",
+      "json": "ייצא JSON"
+    },
     "noData": "אין נתונים זמינים",
-    "search": "חיפוש",
-    "filter": "סינון",
-    "sort": "מיון"
+    "courseDetails": "פרטי הקורס",
+    "enrolledStudents": "סטודנטים רשומים",
+    "noStudentsEnrolled": "אין סטודנטים רשומים"
   },
   "tour": {
     "step1": {

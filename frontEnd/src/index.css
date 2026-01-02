@@ -2,9 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-gray-50;
-  transition: direction 0.3s ease;
+@layer base {
+  * {
+    @apply antialiased;
+  }
+  
+  body {
+    @apply bg-white text-dark-900;
+    font-feature-settings: "kern" 1, "liga" 1;
+    transition: direction 0.3s ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Focus Ring Styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+  }
+  
+  /* Premium Shadows */
+  .shadow-premium-soft {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+  }
 }
 
 #root {
